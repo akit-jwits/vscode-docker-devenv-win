@@ -2,17 +2,17 @@
 # Visual Studio Codeのセットアップ
 
 ## Visual Studio Codeのインストール
-Microsoft Storeからインストールする。管理者権限は不要。
+Microsoft Storeからインストールする。管理者権限は不要。  
 https://apps.microsoft.com/store/detail/XP9KHM4BK9FZ7Q
 
 # VSCode拡張のインストール
 ## 必須
 - **WSL**  
-用途：WSL（Linux）を用いた開発環境の利用
+用途：WSL（Linux）を用いた開発環境の利用  
 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
 
 - **Dev Containers**  
-用途：Dockerを用いた開発環境の利用
+用途：Dockerを用いた開発環境の利用  
 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 ## 推奨

@@ -9,11 +9,11 @@ sudo apt install git
 git config --global user.name "$1"
 git config --global user.email "$2"
 
-# Git が GitHub や AzureDevOps で多要素認証をできるようにする
+# Git が GitHub や AzureDevOps で多要素認証をできるようにする（Gitのバージョンによってここは変更が必要になる）
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 git config --global credential.https://dev.azure.com.useHttpPath true
 
-# Docker のインストール
+# Docker のインストール（公式に記載の内容そのまま）
 # https://docs.docker.com/engine/install/ubuntu/
 sudo apt-get install ca-certificates curl gnupg
 
