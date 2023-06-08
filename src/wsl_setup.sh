@@ -1,13 +1,13 @@
-echo ■ DNS設定の変更
-# WSLの不具合で名前解決に失敗する挙動への対応 
+# WSLの不具合で名前解決に失敗する挙動とDocker自動起動に対応 
 # ※環境によってこの対応は不要
 # 参考：
 # https://github.com/microsoft/WSL/issues/5420
 # https://github.com/microsoft/WSL/issues/8365
-# [boot]のコマンドは1行でしか書けない。resolve.confに複数行書きたい場合はechoの -e オプションと`\n`の利用などを検討用
+echo ■ DNS設定の変更
 sudo tee /etc/resolv.conf <<EOF >/dev/null
 nameserver 8.8.8.8
 EOF
+# [boot]のコマンドは1行でしか書けない。resolve.confに複数行書きたい場合はechoの -e オプションと`\n`の利用などを検討用
 sudo tee /etc/wsl.conf <<EOF >/dev/null
 [network]
 generateResolvConf = false
