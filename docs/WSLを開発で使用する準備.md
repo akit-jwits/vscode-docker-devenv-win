@@ -25,10 +25,10 @@
 	- Git・Docker のインストールと初期設定
 		- [wsl_setup.sh](../src/wsl_setup.sh) を任意の場所にダウンロード 
 		- コマンドプロンプトでダウンロードした場所をカレントディレクトリにして以下を実行  
-			`bash wsl_setup.sh <Git user name> <Git user email>`  
+			`wsl ./wsl_setup.sh <Git user name> <Git user email>`  
 			
 			※<> 部分は git config で指定するのに使用する値。任意のものに書き換えて実行する。Windows の設定とかとは無関係。GitHub で使うものがあればそれを設定するのが良い。  
-			例：`bash wsl_setup.sh user_a user_a@domain.com`
+			例：`wsl ./wsl_setup.sh user_a user_a@domain.com`
 	- Docker の動作確認  
 		- 以下のコマンドを実行  
 			`wsl docker run hello-world`
