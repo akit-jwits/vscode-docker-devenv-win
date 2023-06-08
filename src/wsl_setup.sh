@@ -15,9 +15,11 @@ generateResolvConf = false
 command = echo "nameserver 8.8.8.8" > /etc/resolv.conf && service docker start
 EOF
 
+
 echo ■ パッケージマネージャーでパッケージを更新
 sudo apt -qq update
 sudo apt -qq upgrade -y
+
 
 echo ■ Git のインストール・初期設定
 sudo apt -qq install git
@@ -30,6 +32,7 @@ git config --global user.email "$2"
 # ※Windowsにインストール済みのGitのバージョンやインストール先によってここは変更が必要になる
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 git config --global credential.https://dev.azure.com.useHttpPath true
+
 
 echo ■ Docker のインストール
 # 公式に記載の内容そのまま（gpg -dearmorの部分だけ "--yes" を追記、aptの-qqオプションも追加）
@@ -49,11 +52,12 @@ sudo apt-get -qq update
 
 sudo apt-get -qq install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
-echo ■ Docker の実行権限設定
-sudo gpasswd -a $USER docker # dockerグループにユーザーを追加
+# dockerグループにユーザーを追加
+sudo gpasswd -a $USER docker
 
 # Dockerを明示的に起動しておく※環境によっては必要ない
 sudo service docker start
+
 
 echo ■ クリーンアップ
 # WSLの容量軽減策
