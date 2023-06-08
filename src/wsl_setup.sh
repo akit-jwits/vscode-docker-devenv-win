@@ -12,7 +12,7 @@ sudo tee /etc/wsl.conf <<EOF >/dev/null
 [network]
 generateResolvConf = false
 [boot]
-command = echo "nameserver 8.8.8.8" > /etc/resolv.conf
+command = echo "nameserver 8.8.8.8" > /etc/resolv.conf && service docker start
 EOF
 
 echo ■ パッケージマネージャーでパッケージを更新
@@ -51,6 +51,9 @@ sudo apt-get -qq install docker-ce docker-ce-cli containerd.io docker-compose-pl
 
 echo ■ Docker の実行権限設定
 sudo gpasswd -a $USER docker # dockerグループにユーザーを追加
+
+# Dockerを明示的に起動しておく※環境によっては必要ない
+sudo service docker start
 
 echo ■ クリーンアップ
 # WSLの容量軽減策
