@@ -10,10 +10,10 @@
 ## セットアップ手順
 
 1. 管理者権限でコマンドプロンプトを開いてコマンドを実行
-	- WSL のインストール  
-		`wsl --install`
-	- WSL のアップデート  
-		`wsl --update`
+	- Windows Subsystem for Linux のインストール
+		`winget install 9P9TQF7MRM4R`
+	- WSL のインストールとアップデート（不要かも。追々確認）
+		`wsl --install && wsl --update`
 1. PCを再起動する
 1. コマンドプロンプトを開いてコマンドを実行 ※管理者で実行する必要はない
 	- WSL の既定のバージョンを2にする（最初からなってると思うが念のため）  
