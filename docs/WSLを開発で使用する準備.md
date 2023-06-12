@@ -8,12 +8,14 @@
 - 必須ではないが利便性のため Microsoft もおすすめの [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701) をインストールすることを推奨。
 
 ## セットアップ手順
-
-1. 管理者権限でコマンドプロンプトを開いてコマンドを実行
-	- Windows Subsystem for Linux のインストール
-		`winget install 9P9TQF7MRM4R`
-	- WSL のインストールとアップデート（不要かも。追々確認）
+<!-- おそらく不要、必要と判明したら復活させる
+1.管理者権限でコマンドプロンプトを開いてコマンドを実行
+	- WSL のインストールとアップデート
 		`wsl --install && wsl --update`
+-->
+1. Windows Subsystem for Linuxのインストール
+	- Microsoft Storeからインストールを実行（途中で管理者権限を求められる）
+	https://www.microsoft.com/store/productId/9P9TQF7MRM4R
 1. PCを再起動する
 1. コマンドプロンプトを開いてコマンドを実行 ※管理者で実行する必要はない
 	- WSL の既定のバージョンを2にする（最初からなってると思うが念のため）  
