@@ -1,3 +1,8 @@
+# 以下の入力を受け取っている前提とする
+# 標準入力：git.exeのパス
+# $1：Git ユーザー名
+# $2：Git Eメールアドレス
+
 # WSLの不具合で名前解決に失敗する挙動とDocker自動起動に対応 
 # ※環境によってこの対応は不要
 # 参考：
@@ -30,7 +35,9 @@ git config --global user.email "$2"
 
 # Git が GitHub や AzureDevOps で多要素認証をできるようにする
 # ※Windowsにインストール済みのGitのバージョンやインストール先によってここは変更が必要になる
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+gitdir=`cat - | sed -e 's/Git.*/Git/g;s/C:/c/g;s/\\\/\//g'` # 標準入力を置換してGitのインストールディレクトリパスを準備
+gcmpath="/mnt/$gitdir/mingw64/bin/git-credential-manager.exe"
+git config --global credential.helper "$gcmpath"
 git config --global credential.https://dev.azure.com.useHttpPath true
 
 
