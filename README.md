@@ -16,8 +16,10 @@ Windows 11 Home（22H2）および 2023-05-20 時点の各種ソフトウェア�
 
 ## 前提
 以下手順の通り設定作業を終わらせていること。
-1. [Visual Studio Codeのセットアップ](docs/Visual%20Studio%20Code%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97.md)
-2. [WSLを開発で使用する準備](docs/WSL%E3%82%92%E9%96%8B%E7%99%BA%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%BA%96%E5%82%99.md)
+1. 最新版のGit for Windows のインストール
+2. Visual Studio Code のインストール（Windowsストアからを推奨）
+3. [Visual Studio Codeのセットアップ](docs/Visual%20Studio%20Code%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97.md)
+4. [WSLを開発で使用する準備](docs/WSL%E3%82%92%E9%96%8B%E7%99%BA%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%BA%96%E5%82%99.md)
 
 ## VSCodeでのDockerコンテナ環境準備に必要なもの
 細かい仕様等はさておき、最低限必要なものの概要は以下。
