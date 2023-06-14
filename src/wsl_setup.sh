@@ -1,7 +1,7 @@
 # 以下の入力を受け取っている前提とする
-# 標準入力：git.exeのパス
-# $1：Git ユーザー名
-# $2：Git Eメールアドレス
+gitpath=$1 # 標準入力：git.exeのパス
+gituser=$2 # $1：Git ユーザー名
+gitemail=$3 # $2：Git Eメールアドレス
 
 # WSLの不具合で名前解決に失敗する挙動とDocker自動起動に対応 
 # ※環境によってこの対応は不要
@@ -30,12 +30,12 @@ echo ■ Git のインストール・初期設定
 sudo apt -qq install git
 
 # 設定値は引数を使用
-git config --global user.name "$1"
-git config --global user.email "$2"
+git config --global user.name "$gituser"
+git config --global user.email "$gitemail"
 
 # Git が GitHub や AzureDevOps で多要素認証をできるようにする
 # ※Windowsにインストール済みのGitのバージョンやインストール先によってここは変更が必要になる
-gitdir=`cat - | sed -e 's/Git.*/Git/g;s/C:/c/g;s/\\\/\//g'` # 標準入力を置換してGitのインストールディレクトリパスを準備
+gitdir=`echo $gitpath | sed -e 's/Git.*/Git/g;s/C:/c/g;s/\\\/\//g'` # 標準入力を置換してGitのインストールディレクトリパスを準備
 gcmpath="/mnt/$gitdir/mingw64/bin/git-credential-manager.exe"
 git config --global credential.helper "$gcmpath"
 git config --global credential.https://dev.azure.com.useHttpPath true
