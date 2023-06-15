@@ -30,19 +30,20 @@
 	- Ubuntu から抜けるため、`exit` を入力する（logoutと表示される）  
 	- Git・Docker のインストールと初期設定
 		- [wsl_setup.sh](../src/wsl_setup.sh) を任意の場所にダウンロード
-		- 上記をダウンロードしたパスにカレントディレクトリを変更する（<>部分は要書き換え）
+		- 以下のコマンドをメモ帳等に貼り付けて<>部分を書き換えたら、コピー・貼り付けして実行
 			```cmd
-			cd "<ダウンロードしたパス>"
+			set setupdir="<wsl_setup.shをダウンロードしたフォルダーのパス>"
+			set gituser=<Git user name>
+			set gitemail=<Git user email>
 			```
-		- `cd`コマンドでカレントディレクトリに変更して以下を実行（<>部分は要書き換え。※書き参照）  
+			※gituserとgitemailは `git config` で指定する値。Windows の設定とかとは無関係。GitHub で使うものがあればそれを設定するのが良い。  
+		- 以下のコマンドを実行（まとめてでも良い）
 			```cmd
+			cd %setupdir%
 			for /f "usebackq delims=," %t in (`where git`) do set gitpath=%t
-			wsl ./wsl_setup.sh '%gitpath%' <Git user name> <Git user email>
+			wsl ./wsl_setup.sh '%gitpath%' %gituser% %gitemail%
 			```
-			
 			※Git のパスが環境変数に設定されている前提。  
-			※<> 部分は git config で指定するのに使用する値。任意のものに書き換えて実行する。Windows の設定とかとは無関係。GitHub で使うものがあればそれを設定するのが良い。  
-			例：`wsl ./wsl_setup.sh '%gitpath%' user_a user_a@domain.com`
 	- Docker の動作確認  
 		- 以下のコマンドを実行  
 			```
