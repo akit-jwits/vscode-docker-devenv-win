@@ -35,7 +35,7 @@ git config --global user.email "$gitemail"
 
 # Git が GitHub や AzureDevOps で多要素認証をできるようにする
 # ※Windowsにインストール済みのGitのバージョンやインストール先によってここは変更が必要になる
-gitdir=`echo $gitpath | sed -e 's/Git.*/Git/g;s/C:/c/g;s/\\\/\//g'` # 標準入力を置換してGitのインストールディレクトリパスを準備
+gitdir=`echo $gitpath | sed -e 's/Git.*/Git/g;s/C:/c/g;s/\\\/\//g'` # Windowsのパスを置換してGitのインストールディレクトリパスを準備
 gcmpath="/mnt/$gitdir/mingw64/bin/git-credential-manager.exe"
 git config --global credential.helper "$gcmpath"
 git config --global credential.https://dev.azure.com.useHttpPath true
