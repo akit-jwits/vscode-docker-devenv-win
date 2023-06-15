@@ -14,7 +14,7 @@
 		`wsl --install && wsl --update`
 -->
 1. Windows Subsystem for Linuxのインストール
-	- Microsoft Storeからインストールを実行（途中で管理者権限を求められる）
+	- Microsoft Storeからインストールを実行（途中で管理者権限を求められる）  
 	https://www.microsoft.com/store/productId/9P9TQF7MRM4R
 1. PCを再起動する
 1. コマンドプロンプトを開いてコマンドを実行 ※管理者で実行する必要はない
