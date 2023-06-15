@@ -19,14 +19,22 @@
 1. PCを再起動する
 1. コマンドプロンプトを開いてコマンドを実行 ※管理者で実行する必要はない
 	- WSL の既定のバージョンを2にする（最初からなってると思うが念のため）  
-		`wsl --set-default-version 2`
+		```
+		wsl --set-default-version 2
+		```
 	- Ubuntu をインストールする  
-		`wsl --install Ubuntu`
+		```
+		wsl --install Ubuntu
+		```
 	- Ubuntu のユーザー名とパスワードの設定を求められるので入力する（Windowsと関係ないので覚えられるものを設定する）
 	- Ubuntu から抜けるため、`exit` を入力する（logoutと表示される）  
 	- Git・Docker のインストールと初期設定
-		- [wsl_setup.sh](../src/wsl_setup.sh) を任意の場所にダウンロード 
-		- コマンドプロンプトでダウンロードした場所をカレントディレクトリにして以下を実行  
+		- [wsl_setup.sh](../src/wsl_setup.sh) を任意の場所にダウンロード
+		- 上記をダウンロードしたパスにカレントディレクトリを変更する（<>部分は要書き換え）
+			```cmd
+			cd "<ダウンロードしたパス>"
+			```
+		- `cd`コマンドでカレントディレクトリに変更して以下を実行（<>部分は要書き換え。※書き参照）  
 			```cmd
 			for /f "usebackq delims=," %t in (`where git`) do set gitpath=%t
 			wsl ./wsl_setup.sh '%gitpath%' <Git user name> <Git user email>
@@ -37,7 +45,9 @@
 			例：`wsl ./wsl_setup.sh '%gitpath%' user_a user_a@domain.com`
 	- Docker の動作確認  
 		- 以下のコマンドを実行  
-			`wsl docker run hello-world`
+			```
+			wsl docker run hello-world
+			```
 			
 # WSL の使い方
 細かくいうと色々あるけど基本の3パターン。
